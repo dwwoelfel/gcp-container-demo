@@ -1,0 +1,23 @@
+{
+  "name": "container-demo",
+  "version": "1.0.0",
+  "main": "dist/server.js",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "build-ts": "tsc",
+    "watch-ts": "tsc -w",
+    "build-container": "gcloud builds submit --config=cloudbuild.yaml",
+    "restart-instance-group": "gcloud compute instance-groups managed rolling-action replace --project=GCP_PROJECT_NAME INSTANCE_GROUP_NAME --max-surge=5 --max-unavailable=0 --region=us-west1",
+    "deploy": "yarn build-container && yarn restart-instance-group"
+  },
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.7",
+    "@types/node": "^14.0.27",
+    "prettier": "^2.0.5",
+    "typescript": "^3.9.7"
+  }
+}

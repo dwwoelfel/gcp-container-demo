@@ -1,0 +1,10 @@
+README.md
+node_modules
+yarn-debug.log
+dist/
+.github/
+.vscode/
+LICENSE
+.git/
+*.log
+.DS_Store

@@ -1,0 +1,7 @@
+steps:
+  - name: 'gcr.io/cloud-builders/docker'
+    args: ['build', '-t', 'gcr.io/GCP_PROJECT_NAME/container-demo', '.']
+  - name: 'gcr.io/cloud-builders/docker'
+    args: ['push', 'gcr.io/CGP_PROJECT_NAME/container-demo']
+
+images: ['gcr.io/CGP_PROJECT_NAME/container-demo']
